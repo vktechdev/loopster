@@ -47,9 +47,12 @@ class TestServiceEventualStop(softirq.SoftIrqService):
 
 class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
     @mock.patch('loopster.watchdogs.base.WatchDogBase.__enter__')
     def test_error_only_enter(self, enter, send, err_send, wd_send):
         enter.side_effect = FAKE_WD_MINOR_EXCEPTION
@@ -60,9 +63,12 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         err_send.assert_not_called()
         wd_send.assert_called_once()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
     @mock.patch('loopster.watchdogs.base.WatchDogBase.__exit__')
     def test_error_only_exit(self, exit, send, err_send, wd_send):
         exit.side_effect = FAKE_WD_MINOR_EXCEPTION
@@ -73,9 +79,12 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         err_send.assert_not_called()
         wd_send.assert_called_once()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
     def test_error_only_step(self, send, err_send, wd_send):
         s = TestService()
         with mock.patch.object(s,
@@ -87,9 +96,12 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         err_send.assert_called_once()
         wd_send.assert_not_called()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
     @mock.patch('loopster.watchdogs.base.WatchDogBase.__exit__')
     def test_error_exit_and_step(self, exit, send, err_send, wd_send):
         exit.side_effect = FAKE_WD_MINOR_EXCEPTION
@@ -103,9 +115,12 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         err_send.assert_called_once()
         wd_send.assert_called_once()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
     @mock.patch('loopster.watchdogs.base.WatchDogBase.__enter__')
     def test_error_enter_and_step(self, enter, send, err_send, wd_send):
         enter.side_effect = FAKE_WD_MINOR_EXCEPTION
@@ -119,9 +134,12 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         err_send.assert_not_called()
         wd_send.assert_called_once()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
     @mock.patch('loopster.watchdogs.base.WatchDogBase.__exit__')
     @mock.patch('loopster.watchdogs.base.WatchDogBase.__enter__')
     def test_error_all(self, enter, exit, send, err_send, wd_send):
@@ -137,8 +155,10 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         err_send.assert_not_called()
         wd_send.assert_called_once()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._serve_fake')
-    @mock.patch('loopster.services.softirq.SoftIrqService._serve_operational')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._serve_fake')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._serve_operational')
     def test_only_step_enabled(self, serve_operational, serve_fake):
         s = TestService()
 
@@ -147,8 +167,10 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         serve_operational.assert_called_once()
         serve_fake.assert_not_called()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._serve_fake')
-    @mock.patch('loopster.services.softirq.SoftIrqService._serve_operational')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._serve_fake')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._serve_operational')
     def test_only_step_not_enabled(self, serve_operational, serve_fake):
         s = TestService(operate=False)
 
@@ -157,10 +179,14 @@ class SoftIRQLoopStepMinorWatchdogErrorInTryTestCase(unittest.TestCase):
         serve_operational.assert_not_called()
         serve_fake.assert_called_once()
 
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_wd_error_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_exc_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._send_step_event')
-    @mock.patch('loopster.services.softirq.SoftIrqService._on_sighup')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_wd_error_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_exc_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._send_step_event')
+    @mock.patch('loopster.services.softirq.SoftIrqService'
+                '._on_sighup')
     def test_loop_step_error_only_step_and_signum(self, on_sighup, send,
                                                   err_send, wd_send):
         s = TestService(signum=multiprocessing.Value("i", 0))
