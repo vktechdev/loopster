@@ -5,7 +5,7 @@
 
 
 Welcome to loopster's documentation!
-===================================
+====================================
 
 Loopster - Service library
 
