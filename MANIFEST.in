@@ -1,0 +1,8 @@
+include README.rst
+include LICENSE
+
+exclude .gitignore
+
+global-exclude *docker*
+global-exclude *.pyc
+global-exclude *~
